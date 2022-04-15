@@ -1,0 +1,56 @@
+name:                frisby-global-tags-cabal-ghc
+version:             0.1.0.0
+synopsis:            My personal Haskell tagging solution
+-- description:
+license:             BSD2
+license-file:        LICENSE
+copyright:           Nicolas Frisby 2022
+author:              Nicolas Frisby
+maintainer:          nicolas.frisby@tweag.io
+category:            Code
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+
+  exposed-modules:     FrisbyGlobalTagsCabalGhc
+                     , FrisbyGlobalTagsCabalGhcGhc
+                     , FrisbyGlobalTagsCabalGhcIn
+                     , FrisbyGlobalTagsCabalGhcOut
+
+  default-language:    Haskell2010
+
+  build-depends:       base              >=4.9 && <4.15
+                     , aeson
+                     , base64
+                     , bytestring
+                     , Cabal
+                     , containers
+                     , cryptohash-md5
+                     , directory
+                     , filepath
+                     , ghc
+                     , ghc-boot-th
+                     , ghc-paths
+                     , sqlite-simple
+                     , temporary
+                     , text
+                     , transformers
+
+
+  ghc-options:         -Wall
+                       -Wcompat
+                       -Wincomplete-uni-patterns
+                       -Wincomplete-record-updates
+                       -Wpartial-fields
+                       -Widentities
+                       -Wredundant-constraints
+                       -Wmissing-export-lists
+
+executable frisby-global-tags-cabal-ghc
+  hs-source-dirs:      exe-src
+  main-is:             Main.hs
+  build-depends:       frisby-global-tags-cabal-ghc
+  default-language:    Haskell2010
+  ghc-options:         -threaded -rtsopts

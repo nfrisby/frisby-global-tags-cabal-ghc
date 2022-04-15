@@ -1,0 +1,7 @@
+;; My hacked up variant on gtags.el
+(add-to-list 'load-path "~/.emacs.d/elisp")
+(autoload 'gtags-mode "gtags" "" t)
+(add-hook 'haskell-mode-hook
+   '(lambda ()
+      (gtags-mode 1)
+))
